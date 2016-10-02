@@ -18,8 +18,8 @@ app.get('/', function(req, res, next){
 	res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.use('/auth', require(path.join(__dirname, 'api', 'sessions', 'auth-routes.js')));
-app.use('/api/groups', require(path.join(__dirname, 'api', 'groups', 'groups-routes.js')));
-app.use('/api/users', require(path.join(__dirname, 'api', 'users', 'users-routes.js')));
+app.use('/auth', require('./api/sessions/auth-routes.js'));
+app.use('/api/groups', require('./api/groups/groups-routes.js'));
+app.use('/api/users', require('./api/users/users-routes.js'));
 
 module.exports = app;
