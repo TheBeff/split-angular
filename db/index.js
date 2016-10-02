@@ -4,8 +4,8 @@ const db = require('./_db');
 const Groups = require('../api/groups/groups-model.js');
 const Users = require('../api/users/users-model.js');
 
-Users.hasOne(Groups);
-Groups.belongsTo(Users);
+Groups.hasMany(Users);
+Users.belongsTo(Groups);
 
 function syncAndSeed(){
 	return db.sync({force: true})

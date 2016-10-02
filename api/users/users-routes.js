@@ -2,7 +2,7 @@ const router = require('express').Router();
 const Users = require('../../db/index.js').models.Users;
 
 router.put('/:id', function(req, res, next){
-	Users.findById(req.params.id)
+	Users.findById(req.params.id, {include: Groups})
 	  .then(function(user){
 	  	user.update({password: req.body.password});
 	  })
