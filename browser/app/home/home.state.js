@@ -1,7 +1,7 @@
-angular.module('SplitGroups')
+angular.module('app')
   .config(function($stateProvider){
     $stateProvider.state('home', {
       url: '/',
-      template: 'Hello'
+      templateUrl: '/browser/app/home/home.template.html'
     });
   });

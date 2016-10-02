@@ -1,4 +1,4 @@
-angular.module('SplitGroups', ['ui.router'])
+angular.module('app', ['ui.router'])
   .config(function($urlRouterProvider){
     $urlRouterProvider.otherwise('/');
   });
