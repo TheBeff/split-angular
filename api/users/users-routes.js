@@ -5,7 +5,7 @@ const Groups = require('../../db/index.js').models.Groups;
 router.put('/:id', function(req, res, next){
 	Users.findById(req.params.id)
 	  .then(function(user){
-	  	user.update({password: req.body.password});
+	  	user.update({groupId: req.body.groupId});
 	  })
 	  .then(function(user){
 	  	res.sendStatus(200);
