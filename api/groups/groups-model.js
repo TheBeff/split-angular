@@ -1,8 +1,7 @@
-const Sequelize = require('sequelize');
-const db = require('../../db');
+const db = require('../../db/_db');
 
-const Groups = db.define('groups', {
-	name: Sequelize.STRING,
+const Groups = db.define('group', {
+	name: db.Sequelize.STRING,
 });
 
 

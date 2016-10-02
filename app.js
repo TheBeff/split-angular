@@ -10,4 +10,7 @@ app.get('/', function(req, res, next){
 	res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+app.use('/api/groups', require(path.join(__dirname, 'api', 'groups', 'groups-routes.js')));
+app.use('/api/users', require(path.join(__dirname, 'api', 'users', 'users-routes.js')));
+
 module.exports = app;
