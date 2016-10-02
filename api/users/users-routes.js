@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const Users = require('../../db/index.js').models.Users;
+const Groups = require('../../db/index.js').models.Groups;
 
 router.put('/:id', function(req, res, next){
-	Users.findById(req.params.id})
+	Users.findById(req.params.id)
 	  .then(function(user){
 	  	user.update({password: req.body.password});
 	  })
@@ -13,7 +14,7 @@ router.put('/:id', function(req, res, next){
 });
 
 router.get('/:id', function(req, res, next){
-	Users.find({where: {id: req.params.id}}, include: ['Groups'])
+	Users.find({where: {id: req.params.id}, include: [Groups]})
 	  .then(function(user){
 	  	res.send(user);
 	  })
