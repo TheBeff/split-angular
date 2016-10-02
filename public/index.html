@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="/public/bootstrap.css">
-</head>
-<body ng-app="app">
-	<ui style="margin-bottom: 10px" class="nav nav-tabs">
-		<li ui-sref-active="active"><a ui-sref="home">Home</a></li>
-		<li ui-sref-active="active"><a ui-sref="login">Login/Register</a></li>
-	</ui>
-	<br clear="all">
 
-	<ui-view></ui-view>
-	<script src="/public/angular.js"></script>
-	<script src="/public/angular-ui-router.js"></script>
-	<script src="/browser/app.js"></script>
-	<script src="/browser/app/home/home.state.js"></script>
-	<script src="/browser/app/auth/auth.state.js"></script>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="/public/bootstrap.css">
+</head>
+
+<body ng-app="app">
+  <div class="container">
+    <ui style="margin-bottom: 10px" class="nav nav-tabs">
+      <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+      <li ui-sref-active="active"><a ui-sref="login">Login/Register</a></li>
+      <li>
+        <button class="btn btn-primary" ng-disabled="form.$invalid" ng-click="logout()">Logout</button>
+      </li>
+    </ui>
+    <br clear="all">
+    <ui-view></ui-view>
+  </div>
+  <script src="/public/angular.js"></script>
+  <script src="/public/angular-ui-router.js"></script>
+  <script src="/browser/app.js"></script>
+  <script src="/browser/app/home/home.state.js"></script>
+  <script src="/browser/app/auth/auth.state.js"></script>
 </body>
+
 </html>
