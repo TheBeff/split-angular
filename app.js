@@ -8,6 +8,8 @@ app.use('/browser', express.static(path.join(__dirname, "browser")));
 app.use('/public', express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 
+app.use('/', require(path.join(__dirname, 'api', 'sessions', 'session-middleware.js')));
+
 app.get('/', function(req, res, next){
 	res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
