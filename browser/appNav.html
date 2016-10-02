@@ -1,0 +1,8 @@
+<ui style="margin-bottom: 10px" class="nav nav-tabs">
+  <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+  <li ui-sref-active="active"><a ui-sref="login" ng-show="!user">Login/Register</a></li>
+  <li>
+    <button class="btn btn-primary" ng-disabled="form.$invalid" ng-click="logOut()" ng-show="user">Logout</button>
+  </li>
+</ui>
+<br clear="all">
