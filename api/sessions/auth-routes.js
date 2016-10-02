@@ -13,7 +13,7 @@ router.post('/login', function(req, res, next){
 		} else {
 		  currentUser = user;
 		  req.session.userId = user.id;
-		  res.sendStatus(204);	
+		  res.status(204).send(currentUser);	
 		}
 	})
 	.catch(next);
@@ -25,6 +25,8 @@ router.delete('/logout', function(req, res, next){
 	res.redirect('/');
 });
 
-// router.get
+router.get('/', function(req, res, next){
+	res.send(currentUser);
+});
 
 module.exports = router;
