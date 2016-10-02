@@ -2,16 +2,17 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/public/bootstrap.css">
 </head>
 <body ng-app>
 	<ui style="margin-bottom: 10px" class="nav nav-tabs">
-		<li><a href="#">Home</a></li>
-		<li><a href="#">Login/Register</a></li>
+		<li><a ui-sref="home">Home</a></li>
+		<li><a ui-sref="login">Login/Register</a></li>
 	</ui>
 
-	<ui-router></ui-router>
-	<script src="/angular.js"></script>
-	<script src="/app.js"></script>
+	<ui-view></ui-view>
+	<script src="/public/angular.js"></script>
+	<script src="/browser/app.js"></script>
+	<script src="/browser/app/home/home.state.js"></script>
 </body>
 </html>
