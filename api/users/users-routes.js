@@ -2,10 +2,10 @@ const router = require('express').Router();
 const Users = require('../../db/index.js').models.Users;
 const Groups = require('../../db/index.js').models.Groups;
 
-router.put('/:id', function(req, res, next){
+router.put('/:id/groups/:groupId', function(req, res, next){
 	Users.findById(req.params.id)
 	  .then(function(user){
-	  	user.update({groupId: req.body.groupId});
+	  	user.update({groupId: req.params.groupId});
 	  })
 	  .then(function(user){
 	  	res.sendStatus(200);
