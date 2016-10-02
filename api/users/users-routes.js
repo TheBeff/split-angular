@@ -6,7 +6,7 @@ router.put('/:id', function(req, res, next){
 	  .then(function(user){
 	  	user.update({password: req.body.password});
 	  })
-	  .then(function(){
+	  .then(function(user){
 	  	res.sendStatus(200);
 	  })
 	  .catch(next);
