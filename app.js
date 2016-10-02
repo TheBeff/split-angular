@@ -9,11 +9,16 @@ app.use('/public', express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 
 app.use('/', require(path.join(__dirname, 'api', 'sessions', 'session-middleware.js')));
+app.use(function (req, res, next) {
+  console.log('session', req.session);
+  next();
+});
 
 app.get('/', function(req, res, next){
 	res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+app.use('/auth', require(path.join(__dirname, 'api', 'sessions', 'auth-routes.js')));
 app.use('/api/groups', require(path.join(__dirname, 'api', 'groups', 'groups-routes.js')));
 app.use('/api/users', require(path.join(__dirname, 'api', 'users', 'users-routes.js')));
 
